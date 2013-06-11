@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html>
+
+<head> 
+	<title>Information Knights</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="Scripts/jquery.mobile-1.3.0.min.css"/>
+	<link rel="stylesheet" href="Scripts/style.css"/>
+	<script src="Scripts/jquery-1.9.1.js"></script>
+	<script src="Scripts/jquery.mobile-1.3.0.js"></script>
+	<script type="text/javascript" src="Scripts/storeScripts.js"></script>
+	<script>
+	storeInit();
+	</script>
+</head> 
+
+<body> 
+
+<div data-role="page" id="menu">
+
+	<div data-role="header" data-position="fixed">
+	
+
+
+		<h1> Knowledge Guardians </h1>
+
+
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+		<table align="center">
+			<tr>
+				<td align="center">
+					<img src="images/Logo.jpg" class="center">
+				</td>
+			</tr>
+		</table>
+
+		<a href="CharChooser.html" rel="external" data-role="button" data-transition="flow"> Play </a>	
+		<a href="" data-role="button" onClick="resetAll()"> Reset All </a>
+		<a href="" data-role="button" onClick="testCase()"> Test Case </a>
+		<a href="" data-role="button" onClick="displayAll()"> Display All </a>
+		<a href="" data-role="button" onClick="storeInit()"> storeInit() </a>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href=""><img src="images/jouer.png" height="100" width="100"></a></li>
+				<li><a href="#instruction" data-transition = "flow"><img src="images/instructions.png" height="100" width="200"></a></li>
+				<li><a href="#store" data-transition = "flow" onClick="displayAll()"><img src="images/magasine.png" height="100" width="100"></a></li>
+				<li><a href="#about" data-transition="flip"><img src="images/creature.png" height="100" width="200"></a></li>
+			</ul>
+		</div>
+	</div>		
+
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" id = "store">
+
+	<div data-role="header">
+		<h1> Knowledge Guardians Store </h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+		<table align = "center" cellpadding="0" border="0">
+			<tr>
+				<td align = "center" colspan="4" id = "coinDisplay">
+					<div id="coinDisplay"></div>				
+				</td>
+			</tr>
+			<tr>
+				<td align = "center" colspan="4">
+				<img src="images/store_header.png">
+				</td>
+			</tr>
+			<tr>
+				<td align = "center">
+				<img src="images/store_up1.png" onClick="addHeart()">
+				</td>
+				<td align = "center">
+				<img src="images/store_up2.png" onClick="addSword()">
+				</td>
+				<td>
+				<img src="images/store_up3.png"onClick="addShield()">
+				</td>
+				<td>
+				<img src="images/store_up4.png"onClick="addDrink()">
+				</td>
+			</tr>
+			<tr>
+		</table>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#menu" data-transition="flow" data-direction="reverse"><img src="images/jouer.png" height="100" width="100"></a></li>
+				<li><a href="#instruction" data-transition = "flow" data-direction="reverse"><img src="images/instructions.png" height="100" width="200"></a></li>
+				<li><a href="#store" data-transition = "flow"><img src="images/magasine.png" height="100" width="100"></a></li>
+				<li><a href="#about" data-transition="flip"><img src="images/creature.png" height="100" width="200"></a></li>
+			</ul>
+		</div>
+	</div>		
+
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+</body>
+</html>
