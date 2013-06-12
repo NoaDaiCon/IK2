@@ -5,31 +5,28 @@ function storeInit()
 	displaySwords = document.getElementById("swordDisplay");
 	displayShields = document.getElementById("shieldDisplay");
 	displayDrinks = document.getElementById("drinkDisplay");
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
-	if(localStorage.getItem("coins") === null)
+	if(typeof localStorage.coins != 'number')
 	{
 		localStorage.coins=0;
 	}
-	if (localStorage.getItem("hearts") === null)
+	if (typeof localStorage.hearts != 'number')
 	{
 		localStorage.hearts=0;
 	}
-	if (localStorage.getItem("swords") === null)
+	if (typeof localStorage.swords != 'number')
 	{
 		localStorage.swords=0;
 	}
-	if (localStorage.getItem("shields") === null)
+	if (typeof localStorage.shields != 'number')
 	{
 		localStorage.shields=0;
 	}
-	if (localStorage.getItem("drinks") === null)
+	if (typeof localStorage.drinks != 'number')
 	{
 		localStorage.drinks=0;
 	}
+	displayAll();
 }
 
 function addHeart()
@@ -80,44 +77,11 @@ function addDrink()
 		localStorage.drinks++;
 		localStorage.coins -=1000;
 		alert("You bought a Drink! Coins: " + localStorage.coins + " Drinks: " + localStorage.drinks);
-<<<<<<< HEAD
-=======
-	}
-	else
-	{
-		alert("You don't have enough coins for that!");
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
 	}
 	else
 	{
 		alert("You don't have enough coins for that!");
 	}
-}
-
-function test1()
-{
-	alert("Coins "+localStorage.coins + " Hearts " + localStorage.hearts + " Swords " + localStorage.swords + " Shields " + localStorage.shields + " drinks " + localStorage.drinks);
-}
-
-function resetAll()
-{
-	localStorage.coins=0;
-	localStorage.hearts=0;
-	localStorage.swords=0;
-	localStorage.shields=0;
-	localStorage.drinks=0;
-	displayAll();
-}
-
-function displayAll()
-{
-	alert("C " + localStorage.coins +" H "+localStorage.hearts+" SW "+localStorage.swords+" SH "+localStorage.shields+" D "+localStorage.drinks);
-}
-
-function testCase()
-{
-	localStorage.coins = 2000;
-	displayAll();
 }
 
 function test1()

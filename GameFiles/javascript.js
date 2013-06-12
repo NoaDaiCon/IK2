@@ -67,7 +67,7 @@ function f()
 		{
 			localStorage.hearts = 5;
 		}
-		if(typeof localStorage.coin != 'number')
+		if(typeof localStorage.coins != 'number')
 		{
 			
 		}
@@ -679,7 +679,7 @@ function f()
 	}
 	function correctAnswer()
 	{
-		localStorage.coin+=20;
+		localStorage.coins+=20;
 		correctAnswers++;
 		object.x = width+object.width;
 		if(level == 1)
@@ -730,9 +730,9 @@ function f()
 		ctx.drawImage(imageArray["coin"], 100, height-35, 25,25);
 		ctx.fillStyle = "black";
 		ctx.font="20px 'Bernard MT Condensed' ";
-		ctx.fillText(localStorage.coin,125, height-15);
+		ctx.fillText(localStorage.coins,125, height-15);
 		ctx.fillStyle = "white";
 		ctx.font="20px 'Bernard MT Condensed' ";
-		ctx.fillText(localStorage.coin,127, height-15);
+		ctx.fillText(localStorage.coins,127, height-15);
 	}
 }

@@ -1,13 +1,18 @@
-
-function storeInit() {
+function storeInit() 
+{
+	displayCoins = document.getElementById("coinDisplay");
+	displayHearts = document.getElementById("heartDisplay");
+	displaySwords = document.getElementById("swordDisplay");
+	displayShields = document.getElementById("shieldDisplay");
+	displayDrinks = document.getElementById("drinkDisplay");
+	
 	if(localStorage.getItem("coins") === null)
 	{
-<<<<<<< HEAD
-		localStorage.coin=0;
+		localStorage.coins=0;
 	}
 	if (localStorage.getItem("hearts") === null)
 	{
-		localStorage.hearts=5;
+		localStorage.hearts=0;
 	}
 	if (localStorage.getItem("swords") === null)
 	{
@@ -20,110 +25,89 @@ function storeInit() {
 	if (localStorage.getItem("drinks") === null)
 	{
 		localStorage.drinks=0;
-=======
-		localStorage.coins="0";
 	}
-	if (localStorage.getItem("hearts") === null)
-	{
-		localStorage.hearts="0";
-	}
-	if (localStorage.getItem("swords") === null)
-	{
-		localStorage.swords="0";
-	}
-	if (localStorage.getItem("shields") === null)
-	{
-		localStorage.shields="0";
-	}
-	if (localStorage.getItem("drinks") === null)
-	{
-		localStorage.drinks="0";
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
-	}
-}
-
-function getCoins()
-{
-<<<<<<< HEAD
-	return localStorage.coin;
-=======
-	return localStorage.coins;
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
-}
-
-function setCoins(x)
-{
-<<<<<<< HEAD
-	localStorage.coin = x;
-=======
-	localStorage.coins = x;
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
 }
 
 function addHeart()
 {
-<<<<<<< HEAD
-	if(localStorage.coin >= 60)
-=======
 	if(localStorage.coins >= 60)
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
 	{
 		localStorage.hearts++;
-		alert("You have bought a life!");
+		localStorage.coins -=60;
+		alert("You bought a Heart! Coins: " + localStorage.coins + " Hearts: " + localStorage.hearts );
 	}
 	else
 	{
-		alert("You don't have enough coins for a life!");
-	{
+		alert("You don't have enough coins for that!");
+	}
 }
 
 function addSword()
 {
-<<<<<<< HEAD
-	if(localStorage.coin >= 100)
-=======
 	if(localStorage.coins >= 100)
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
 	{
 		localStorage.swords++;
-		alert("You have bought a sword!");
+		localStorage.coins -=100;
+		alert("You bought a Sword! Coins: " + localStorage.coins + " Swords: " + localStorage.swords);
 	}
 	else
 	{
-		alert("You don't have enough coins for a sword!");
-	{
+		alert("You don't have enough coins for that!");
+	}
 }
 
 function addShield()
 {
-<<<<<<< HEAD
-	if(localStorage.coin >= 80)
-=======
 	if(localStorage.coins >= 80)
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
 	{
 		localStorage.shields++;
-		alert("You have bought a sword!");
+		localStorage.coins -=80;
+		alert("You bought a Shield! Coins: " + localStorage.coins + " Shields: " + localStorage.shields);
 	}
 	else
 	{
-		alert("You don't have enough coins for a shield!");
-	{
+		alert("You don't have enough coins for that!");
+	}
 }
-
 function addDrink()
 {
-<<<<<<< HEAD
-	if(localStorage.coin >= 1000)
-=======
 	if(localStorage.coins >= 1000)
->>>>>>> 10fc893aba65b600bab322df59d630c4c29b59d3
 	{
 		localStorage.drinks++;
-		alert("You have bought a drink!");
+		localStorage.coins -=1000;
+		alert("You bought a Drink! Coins: " + localStorage.coins + " Drinks: " + localStorage.drinks);
 	}
 	else
 	{
-		alert("You don't have enough coins for a drink!");
-	{
+		alert("You don't have enough coins for that!");
+	}
 }
+
+function test1()
+{
+	alert("Coins "+localStorage.coins + " Hearts " + localStorage.hearts + " Swords " + localStorage.swords + " Shields " + localStorage.shields + " drinks " + localStorage.drinks);
+}
+
+function resetAll()
+{
+	localStorage.coins=0;
+	localStorage.hearts=0;
+	localStorage.swords=0;
+	localStorage.shields=0;
+	localStorage.drinks=0;
+	displayAll();
+}
+
+function displayAll()
+{
+	alert("C " + localStorage.coins +" H "+localStorage.hearts+" SW "+localStorage.swords+" SH "+localStorage.shields+" D "+localStorage.drinks);
+}
+
+function testCase()
+{
+	localStorage.coins = 2000;
+	displayAll();
+}
+
+
+
