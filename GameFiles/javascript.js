@@ -63,13 +63,11 @@ function f()
 		background = 1;
 		metrics = ctx.measureText(getQuestion());
 		length = metrics.width;
+		numCoins = localStorage.coins;
+		numCoins = parseInt(localStorage.coins);
 		if(localStorage.hearts < 5)
 		{
 			localStorage.hearts = 5;
-		}
-		if(typeof localStorage.coins != 'number')
-		{
-			
 		}
 		image = new Image();
 		xPos = 0;
@@ -202,10 +200,10 @@ function f()
 		}
 		if(y <= 200 && y >= 150)
 		{
-			if(x <= 60 && x >= 10 && localStorage.potions > 0)
+			if(x <= 60 && x >= 10 && localStorage.drinks > 0)
 			{
 				localStorage.hearts = localStorage.hearts*2;
-				localStorage.potions--;
+				localStorage.drinks--;
 			}
 			else if(x <= width-10 && x >= width-60 && localStorage.swords > 0)
 			{
@@ -679,7 +677,23 @@ function f()
 	}
 	function correctAnswer()
 	{
-		localStorage.coins+=20;
+		if(level == 1)
+		{
+			numCoins+=20;
+		}
+		else if(level == 2)
+		{
+			numCoins+=30;
+		}
+		else if(level == 3)
+		{
+			numCoins+=40;
+		}
+		else
+		{
+			numCoins+=50;
+		}
+		localStorage.coins = ""+numCoins;
 		correctAnswers++;
 		object.x = width+object.width;
 		if(level == 1)
@@ -710,10 +724,10 @@ function f()
 		ctx.drawImage(imageArray["potion"], 10, 150, 50, 50);
 		ctx.fillStyle = "black";
 		ctx.font="20px 'Bernard MT Condensed' ";
-		ctx.fillText(localStorage.potions,60, 200);
+		ctx.fillText(localStorage.drinks,60, 200);
 		ctx.fillStyle = "white";
 		ctx.font="20px 'Bernard MT Condensed' ";
-		ctx.fillText(localStorage.potions,62, 200);
+		ctx.fillText(localStorage.drinks,62, 200);
 		
 		ctx.drawImage(imageArray["sword"], width-60, 150, 50, 50);
 		ctx.fillStyle = "black";
